@@ -15,8 +15,8 @@ module counter(
         end
 
         if (rst) begin
-            ctr = 0;
-            finish = 0;
+            ctr <= 0;
+            finish <= 0;
         end
 
         if (ctr == threshold) begin
