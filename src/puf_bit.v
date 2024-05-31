@@ -15,7 +15,7 @@ module puf_bit(
     wire ctr_out_1, ctr_out_2;
 
     always @ (posedge clk) begin
-        if (en && inter_en == n_ro'x) begin
+        if (en) begin
             inter_en <= n_ro'b1;
         end
     end
