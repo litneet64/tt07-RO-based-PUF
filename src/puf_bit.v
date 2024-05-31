@@ -1,3 +1,4 @@
+
 module puf_bit(
     input wire[7:0] chall,
     input wire clk, rst, en,
@@ -6,6 +7,7 @@ module puf_bit(
 
     localparam n_ro = 32;
     localparam n_half = n_ro / 2;
+    parameter BITWIDTH = n_ro;
 
     wire[n_ro-1:0] ro_out;
     reg[n_ro-1:0] inter_en;
@@ -13,7 +15,8 @@ module puf_bit(
     wire mux_out_1, mux_out_2;
     wire ctr_out_1, ctr_out_2;
 
-    assign inter_en[n_ro-1:0] = n_ro'd1;
+    
+    assign inter_en[n_ro-1:0] = BITWIDTH'd1;
 
     ring_osc ro_array_1[n_half-1:0] (inter_en[n_half-1:0], ro_out[n_half-1:0]);
     ring_osc ro_array_2[n_half-1:0] (inter_en[n_ro-1:n_half], ro_out[n_ro-1:n_half]);

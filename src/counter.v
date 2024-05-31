@@ -1,3 +1,4 @@
+
 module counter(
     input wire in, clk, rst,
     output wire out

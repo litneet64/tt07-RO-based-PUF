@@ -1,3 +1,4 @@
+
 module arbiter (
     input wire out_1, out_2, clk, rst,
     output wire resp, finish

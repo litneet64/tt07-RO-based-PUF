@@ -19,4 +19,3 @@ module ring_osc(
     assign out = inter_wire[num_inv];
 
 endmodule 
-
