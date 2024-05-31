@@ -3,7 +3,7 @@ project:
   title:        "RO-based Physically Unclonable Function (PUF)"      # Project title
   author:       "Pablo Aravena"      # Your name
   discord:      "litneet64"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "Implementation of a Ring Oscillator-based Physically Unclonable Function (PUF) in Sky130"      # One line description of what your project does
+  description:  "Implementation of a Ring Oscillator-based Physically Unclonable Function (PUF) in Sky130, with 8 bits of Challenge-Response Pairs (CRP)"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     10_000_000       # Clock frequency in Hz (or 0 if not applicable)
 
@@ -25,24 +25,24 @@ project:
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  ui[0]: "challenge bit 1"
+  ui[1]: "challenge bit 2"
+  ui[2]: "challenge bit 3"
+  ui[3]: "challenge bit 4"
+  ui[4]: "challenge bit 5"
+  ui[5]: "challenge bit 6"
+  ui[6]: "challenge bit 7"
+  ui[7]: "challenge bit 8"
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  uo[0]: "response bit 1"
+  uo[1]: "response bit 2"
+  uo[2]: "response bit 3"
+  uo[3]: "response bit 4"
+  uo[4]: "response bit 5"
+  uo[5]: "response bit 6"
+  uo[6]: "response bit 7"
+  uo[7]: "response bit 8"
 
   # Bidirectional pins
   uio[0]: ""
