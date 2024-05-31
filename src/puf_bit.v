@@ -9,19 +9,12 @@ module puf_bit(
     localparam n_half = n_ro / 2;
 
     wire[n_ro-1:0] ro_out;
-    reg[n_ro-1:0] inter_en;
 
     wire mux_out_1, mux_out_2;
     wire ctr_out_1, ctr_out_2;
 
-    always @ (posedge clk) begin
-        if (en) begin
-            inter_en <= n_ro'b11111111_11111111_11111111_11111111;
-        end
-    end
-
-    ring_osc ro_array_1[n_half-1:0] (inter_en[n_half-1:0], ro_out[n_half-1:0]);
-    ring_osc ro_array_2[n_half-1:0] (inter_en[n_ro-1:n_half], ro_out[n_ro-1:n_half]);
+    ring_osc ro_array_1[n_half-1:0] (en, ro_out[n_half-1:0]);
+    ring_osc ro_array_2[n_half-1:0] (en, ro_out[n_ro-1:n_half]);
 
     mux_16 mux_1(ro_out[n_half-1:0], chall[3:0], mux_out_1);
     mux_16 mux_2(ro_out[n_ro-1:n_half], chall[7:4], mux_out_2);
