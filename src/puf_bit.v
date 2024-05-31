@@ -16,7 +16,7 @@ module puf_bit(
 
     always @ (posedge clk) begin
         if (en) begin
-            inter_en <= n_ro'b1;
+            inter_en <= n_ro'b11111111_11111111_11111111_11111111;
         end
     end
 
