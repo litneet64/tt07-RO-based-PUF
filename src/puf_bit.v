@@ -9,7 +9,7 @@ module puf_bit(
     localparam n_half = n_ro / 2;
 
     wire[n_ro-1:0] ro_out;
-    reg[n_ro-1:0] inter_en;
+    wire[n_ro-1:0] inter_en;
 
     wire mux_out_1, mux_out_2;
     wire ctr_out_1, ctr_out_2;
