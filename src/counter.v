@@ -11,7 +11,7 @@ module counter(
 
     always @ (posedge clk) begin
         if (in) begin
-            ctr = ctr + 1;
+            ctr <= ctr + 1;
         end
 
         if (rst) begin
@@ -20,7 +20,7 @@ module counter(
         end
 
         if (ctr == threshold) begin
-            finish = 1;
+            finish <= 1;
         end
     end
 
