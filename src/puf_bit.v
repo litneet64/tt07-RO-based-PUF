@@ -22,6 +22,6 @@ module puf_bit(
     counter cnt_1(mux_out_1, clk, rst, ctr_out_1);
     counter cnt_2(mux_out_2, clk, rst, ctr_out_2);
 
-    arbiter race_arb(cnt_out_1, cnt_out_2, clk, rst, resp, finish);
+    arbiter race_arb(ctr_out_1, ctr_out_2, clk, rst, resp, finish);
 
 endmodule

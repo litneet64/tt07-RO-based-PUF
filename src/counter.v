@@ -4,9 +4,9 @@ module counter(
     output wire out
 );
     reg[15:0] ctr;
+    reg[15:0] threshold = 16'b11111111_11111111;
     reg finish;
 
-    assign threshold = 'b11111111_11111111;
     assign out = (finish) ? 1 : 0;
 
     always @ (posedge clk) begin
